@@ -4,6 +4,7 @@ import Nav from "react-bootstrap/Nav";
 import Button from "react-bootstrap/Button";
 import Badge from "react-bootstrap/Badge";
 import Modal from "react-bootstrap/Modal";
+
 import { useState } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -14,6 +15,8 @@ import Cart from "../Cart/Cart";
 const MainNav = (props) => {
   const items = useSelector((state) => state.cart.items);
   const itemLength = items.length;
+
+  const showOrderButton = itemLength !== 0;
 
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
 
@@ -85,9 +88,11 @@ const MainNav = (props) => {
           <Button variant="danger" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Order
-          </Button>
+          {showOrderButton && (
+            <Button variant="primary" onClick={handleClose}>
+              Order
+            </Button>
+          )}
         </Modal.Footer>
       </Modal>
     </>

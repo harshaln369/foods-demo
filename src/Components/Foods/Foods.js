@@ -1,5 +1,7 @@
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+
 import { useEffect, useState } from "react";
-import { Container, Row } from "react-bootstrap";
 import FoodItem from "./FoodItem";
 
 import Alert from "react-bootstrap/Alert";
