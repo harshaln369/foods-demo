@@ -62,7 +62,7 @@ const Foods = () => {
         </Row>
       )}
       {isLoading && !error && (
-        <Spinner animation="border" size="lg" role="status">
+        <Spinner animation="border" variant="light" size="lg" role="status">
           <span className="visually-hidden">Loading...</span>
         </Spinner>
       )}
